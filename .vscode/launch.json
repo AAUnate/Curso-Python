@@ -1,7 +1,10 @@
 {
     "version": "0.2.0",
     "configurations": [
+<<<<<<< HEAD
         
+=======
+>>>>>>> bcb9ca3 (borrar del arbol)
         {
             "type": "node",
             "name": "Ejecutar el archivo actual",
