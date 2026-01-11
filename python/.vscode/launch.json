@@ -1,0 +1,33 @@
+
+{
+  "version": "0.2.0",
+  "configurations": [
+
+    {
+      "name": "Node: Ejecutar JS actual",
+      "type": "node",
+      "request": "launch",
+      "program": "${file}",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal"
+    },
+
+    {
+      "name": "Python: Ejecutar archivo actual",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${file}",
+      "console": "integratedTerminal"
+    }
+
+  ]
+}
+
+//ver luego
+/*{
+    "configurations": [
+    {"name":"Depurador de Python: Archivo actual","type":"debugpy","request":"launch","program":"${file}","console":"integratedTerminal"}
+    ]
+
+
+};*/
