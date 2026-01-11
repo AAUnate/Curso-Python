@@ -15,10 +15,14 @@ let datos = {
 mostrar(datos);
 function mostrar(datos) {
 <<<<<<< HEAD
+<<<<<<< HEAD
   console.log(`nombre: ${datos.nombre} - edad: ${datos.edad} - ciudad: ${datos.ciudad}`);
 }
 >>>>>>> 7c9fd09 (arregle temporal)
 =======
   console.log(`nombre: $(datos.nombre) - edad: ${datos.edad} - ciudad: ${datos.ciudad}`);
+=======
+  console.log(`nombre: ${datos.nombre} - edad: ${datos.edad} - ciudad: ${datos.ciudad}`);
+>>>>>>> 7c9fd09 (arregle temporal)
 }
 >>>>>>> 9749fb8 (me voy)

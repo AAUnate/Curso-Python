@@ -2,9 +2,13 @@
     "version": "0.2.0",
     "configurations": [
 <<<<<<< HEAD
+<<<<<<< HEAD
         
 =======
 >>>>>>> bcb9ca3 (borrar del arbol)
+=======
+        
+>>>>>>> 7c9fd09 (arregle temporal)
         {
             "type": "node",
             "name": "Ejecutar el archivo actual",
