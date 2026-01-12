@@ -16,6 +16,9 @@ mostrar(datos);
 function mostrar(datos) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 7c9fd09 (arregle temporal)
   console.log(`nombre: ${datos.nombre} - edad: ${datos.edad} - ciudad: ${datos.ciudad}`);
 }
 >>>>>>> 7c9fd09 (arregle temporal)
