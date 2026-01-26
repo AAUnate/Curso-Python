@@ -5,7 +5,7 @@ while (seguir == "si"):
     nombre = input("Ingrese nombre:  ")
     apellido = input("ingrese apellido:  ")
     print(f"hola nombre {nombre} de apellido {apellido}")
-    seguir = input("Desea continuar S/N: ")
+    seguir = input("Deseas continuar S/N: ")
     verificar = "si" if (seguir == "si") else "si" if (seguir == "s") else "si" if (seguir == "SI") else "si" if (seguir == "S") else "no" 
     if verificar == "si":
         seguir="si"
