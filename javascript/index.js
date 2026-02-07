@@ -10,5 +10,5 @@ let datos = {
 
 mostrar(datos);
 function mostrar(datos) {
-  console.log(`nombre: $(datos.nombre) - edad: ${datos.edad} - ciudad: ${datos.ciudad}`);
+  console.log(`nombre: ${datos.nombre} - edad: ${datos.edad} - ciudad: ${datos.ciudad}`);
 }

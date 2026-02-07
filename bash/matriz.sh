@@ -1,12 +1,13 @@
 #!/bin/bash
 mostrar(){
-    #echo "${matriz[0]} ${matriz[1]}"
+    echo "${matriz[0]} ${matriz[1]} ${matriz[2]} ${matriz[3]}"
+    echo "$i"
     j=0
     while [[ $j < $i ]]; do
         echo "matriz-Nombre: ${matriz[$j]}"
         j=$(( 1+j ))
         echo "Matriz-edad: ${matriz[$j]}"
-        j=$(( i+j ))
+        j=$(( 1+j ))
     done
 }
 
