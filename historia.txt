@@ -1,0 +1,494 @@
+    1  history -a
+    2  history -w
+    3  ls
+    4  ls *.txt
+    5  clear
+    6  declare -a archivos=($(ls *.txt))
+    7  declare -p archivos
+    8  echo "${!archivos[@]}"
+    9  echo "${#archivos[@]}"
+   10  for i in "${archivos[@]}"; do { printf '%s\n' "${archivos[i]}"; } done 
+   11  for i in "${archivos[@]}"; do { printf '%s\n' "${archivos[i]}"; } done 
+   12  clear
+   13  for i in archivos; do { echo "$(i)"; } done 
+   14  for i in archivos; do { echo "$i"; } done 
+   15  for i in "${archivos[@]}"; do { e=0; printf '%s\n' "${archivos[e]}"; } done 
+   16  clear
+   17  function visual(){ clear; for i in "${archivos[@]}"; do { e=0; printf '%s\n' "${archivos[e]}"; e=$(( e + 2 )); cat "${archivos[e]}"; echo -e "\t\tPresione enter... " && read -n ent; clear; } done } 
+   18  visual
+   19  function visual(){ clear; for i in "${archivos[@]}"; do { e=0; printf '%s\n' "${archivos[e]}"; e=$(( e + 2 )); cat "${archivos[e]}"; echo -e "\t\tPresione enter... "; read -n ent; clear; } done } 
+   20  visual
+   21  function visual(){ clear; for i in "${archivos[@]}"; do { e=0; printf '%s\n' "${archivos[e]}"; e=$(( e + 2 )); cat "${archivos[e]}"; echo -e "\t\tPresione enter... "; read -n ent; clear; } done } 
+   22  echo -e "\datos"
+   23  echo -e "\tdatos"
+   24  echo -e "\tdatos"; read -n enter
+   25  ls 
+   26  cat raiz.txt
+   27  clear
+   28  function visual(){ clear; for i in "${archivos[@]}"; do { e=0; printf '%s\n' "${archivos[e]}"; cat "${archivos[e]}"; echo -e -n "\t\tPresione enter... "; read ent; e=$(( $e+1 )); clear; } done } 
+   29  visual
+   30  function visual(){ clear; for i in "${archivos[@]}"; do { e=0; printf '%s\n' "${archivos[e]}"; cat "${archivos[e]}"; echo -e -n "\t\tPresione enter... "; read ent; e=$(( e+1 )); clear; } done } 
+   31  visual
+   32  clear
+   33  function visual(){ clear; for i in "${archivos[@]}"; do { e=0; printf '%s\n' "${archivos[e]}"; cat "${archivos[e]}"; echo -e -n "\t\tPresione enter... "; read ent; e=$(( "$e"+1 )); clear; } done } 
+   34  visual
+   35  i==
+   36  i=0
+   37  echo $i
+   38  i=i+1
+   39  echo $i
+   40  i=0
+   41  i=$(( i+1 ))
+   42  echo $i
+   43  i=$(( i+1 ))
+   44  echo $i
+   45  clear
+   46  i=$(( i+1 ))
+   47  function visual(){ clear; for i in "${archivos[@]}"; do { e=0; printf '%s\n' "${archivos[e]}"; cat "${archivos[e]}"; echo -e -n "\t\tPresione enter... "; read ent; e=$(( e+1 )); clear; } done } 
+   48  visual
+   49  clear
+   50  ls
+   51  cat listado.sh
+   52  cat codigo.txt
+   53  clear
+   54  ls
+   55  cat auto.sh
+   56  clear
+   57  ls
+   58  cat carga.sh
+   59  cat actual.sh
+   60  clear
+   61  ls
+   62  cat varios.txt
+   63  clear
+   64  function visual(){ clear; for i in "${archivos[@]}"; do { e=0; printf '%s\n' "${archivos[e]}"; cat "${archivos[e]}"; echo -e -n "\t\tPresione enter... "; read ent; e=$(( e + 1 )); clear; } done } 
+   65  visual
+   66  clear
+   67  cat varios.txt
+   68  clear
+   69  cat varios.txt
+   70  clear
+   71  function visual(){ clear; for i in "${archivos[@]}"; do { e=0; printf '%s\n' "${archivos[e]}"; cat "${archivos[e]}"; echo -e -n "\t\tPresione enter... "; read ent; e=$(( e + 1 )); echo "e vale: $e"; clear; } done } 
+   72  visual
+   73  clear
+   74  function visual(){ clear; for i in "${archivos[@]}"; do { e=0; printf '%s\n' "${archivos[e]}"; cat "${archivos[e]}"; echo -e -n "\t\tPresione enter y e vale $e... "; read ent; e=$(( e + 1 )); clear; } done } 
+   75  visual
+   76  clear
+   77  function visual(){ clear; for i in "${archivos[@]}"; do { e=0; printf '%s\n' "${archivos[e]}"; cat "${archivos[e]}"; echo -e -n "\t\tPresione enter y e vale $e... $i "; read ent; e=$(( e+1 )); clear; } done } 
+   78  visual
+   79  clear
+   80  function visual(){ clear; for i in "${archivos[@]}"; do { e=0; printf '%s\n' "${archivos[e]}"; cat "${archivos[e]}"; echo -e -n "\t\tPresione enter y e vale $e... $i "; read ent; echo $(e=$(( e+1 ))); clear; } done } 
+   81  visual
+   82  clear
+   83  function visual(){ clear; for i in "${archivos[@]}"; do { e=0; printf '%s\n' "${archivos[e]}"; cat "${archivos[e]}"; echo -e -n "\t\tPresione enter y e vale $e... $i "; read ent; echo e=$(( e+1 )); clear; } done } 
+   84  visual
+   85  clear
+   86  function visual(){ clear; e=0; for i in "${archivos[@]}"; do { printf '%s\n' "${archivos[e]}"; cat "${archivos[e]}"; echo -e -n "\t\tPresione enter y e vale ... "; read ent; e=$(( e+1 )); clear; } done; } 
+   87  visual
+   88  clear
+   89  declare -p visual
+   90  declare -f visual
+   91  clear
+   92  function visual2(){ clear; for e in "${archivos[@]}"; do{ echo "$e\n"; done; }
+   93  function visual2(){ clear; for e in "${archivos[@]}"; do { echo "$e\n"}; done; }
+   94  function visual2(){ clear; for e in "${archivos[@]}"; do { echo "$e\n"} done; }
+   95  clear
+   96  function visual2(){ clear; for e in "${archivos[@]}"; do { echo "$e\n"} done; 
+   97  clear
+   98  function visual2(){ clear; for e in "${archivos[@]}"; do { echo "$e\n"; } done; }
+   99  visual2
+  100  clear
+  101  clear
+  102  function visual2(){ o=0; clear; for e in "${archivos[@]}"; do { echo -e "$o) $e\n"; e=$(( e+1 )); } done; }
+  103  visual2
+  104  clear
+  105  function visual2(){ o=1; clear; for e in "${archivos[@]}"; do { echo -e "$o) $e\n"; o=$(( o+1 )); } done; }
+  106  visual2
+  107  clear
+  108  function visual2(){ o=1; clear; for e in "${archivos[@]}"; do { echo "$o) $e"; o=$(( o+1 )); } done; }
+  109  visual2
+  110  clear
+  111  function visual2(){ o=1; clear; for e in "${archivos[@]}"; do { echo -e "$o)\t$e"; o=$(( o+1 )); } done; }
+  112  visual2
+  113  clear
+  114  function visual2(){ o=01; clear; for e in "${archivos[@]}"; do { echo -e "$o)\t$e"; o=$(( o+1 )); } done; }
+  115  visual2
+  116  clear
+  117  function visual2(){ o=1; clear; for e in "${archivos[@]}"; do { echo -e "$o)\t$e"; o=$(( o+01 )); } done; }
+  118  visual2
+  119  clear
+  120  function visual2(){ o=1; clear; for e in "${archivos[@]}"; do { echo -e "$o)\t$e"; o=$(( o+1 )); } done; }
+  121  visual2
+  122  declare -f visual2
+  123  clear
+  124  ls
+  125  declare -f visual > visual.txt
+  126  ls
+  127  clear
+  128  declare -f visual2 > visual2.txt
+  129  declare -f visual2 > visual2.txt
+  130  ls
+  131  cat visual2.txt
+  132  clear
+  133  visual2
+  134  visual ()
+  135  visual()
+  136  ls
+  137  ubi="$(pwd)"
+  138  echo $ubi
+  139  echo "$ubi"
+  140  cd -
+  141  cd /
+  142  clear
+  143  cd $ubi
+  144  cd "$ubi"
+  145  clear
+  146  ls
+  147  cd ..
+  148  ls
+  149  cd practica "Proyectos 
+  150  Word"
+  151  cd "Proyectos Word"
+  152  clear 
+  153  ls
+  154  cd Practica1
+  155  ls
+  156  git branch
+  157  clear
+  158  git branch -vv
+  159  git branchk -a
+  160  clear
+  161  ls
+  162  clear
+  163  git branch -a
+  164  clear
+  165  git remote -v
+  166  clear
+  167  ssh -T git@github.com
+  168  clear
+  169  git status
+  170  git push --set-upstream origin sube
+  171  clear
+  172  git remote show origin
+  173  clear
+  174  git branch 
+  175  git branch -vv
+  176  git config --global user.email
+  177  clear
+  178  git remote -vv
+  179  git branch -a
+  180  clear
+  181  git branch -vv
+  182  git remote -show origin
+  183  git remote show origin
+  184  clear
+  185  git branch
+  186  git branch -v
+  187  git branch -a
+  188  clear
+  189  git remote set-head cinco
+  190  git remote --set-head cinco
+  191  clear
+  192  git remote set-head --auto
+  193  git remote set-head auto
+  194  git remote set-head cinco auto
+  195  git remote set-head cinco --auto
+  196  clear
+  197  git branch
+  198  git switch cinco
+  199  git status
+  200  clear
+  201  git push
+  202  git remote set-head cinco --auto
+  203  ssh -T git@github.com
+  204  clear
+  205  git branch -a
+  206  git remote set-head origin/cinco --auto
+  207  clear
+  208  git branch -vv
+  209  git remote set-head cinco --auto
+  210  git remote -v
+  211  git branch -r
+  212  clear
+  213  git remote set-head cinco --auto
+  214  git remote set-head origin --auto
+  215  clear
+  216  git branch -a
+  217  clear
+  218  git remote show origin
+  219  clear
+  220  git remote set-head origin --auto
+  221  git branch -a
+  222  clear
+  223  git symbolic-ref --short HEAD
+  224  git rev-parse --abbrev-ref HEAD
+  225  clear
+  226  git log --pretty="%h %G? %aN %s"
+  227  clear 
+  228  git log --pretty="%h %G? %aN %s" | awk '$2 == "G" {print $0}'
+  229  git diff cinco main
+  230  clear
+  231  git log --oneline | wc -l
+  232  git log --oneline main | wc -l
+  233  git merge --allow-histories
+  234  git merge --allow-unrelated-histories main
+  235  clear
+  236  git add .
+  237  git merge continue
+  238  git commit -m "nuevo"
+  239  git log --oneline | wc -l
+  240  git status
+  241  git push --all
+  242  clear
+  243  git push --force --all
+  244  git remote -vv
+  245  git branch -vv
+  246  clear
+  247  ls
+  248  git switch borrar
+  249  git log --oneline | wc -l
+  250  git merge --allow-unrelated-histories main
+  251  git add .
+  252  git commit -m "mergear" -S
+  253  clear
+  254  git push --force --all
+  255  clear
+  256  git branch main
+  257  git checkout main
+  258  git branch -d borrar
+  259  git branch -a
+  260  clear
+  261  git push --delete origin borrar
+  262  git branch -a
+  263  git fetch --prune
+  264  clear
+  265  git branch -a
+  266  exit
+  267  git --version
+  268  cd ,,
+  269  cd ..
+  270  clear
+  271  ls
+  272  cd "Proyectos Word"
+  273  ls
+  274  cd Practica1
+  275  git status
+  276  git push --all --force
+  277  git branch -vv
+  278  git switch cinco
+  279  git status
+  280  git branch sube
+  281  git switch sube
+  282  git status
+  283  clear
+  284  exit
+  285  declare -f
+  286  clear
+  287  declare -F
+  288  clear
+  289  echo -f arch
+  290  echo -p arch
+  291  clear
+  292  echo "$arch"
+  293  echo $arch
+  294  printf "$arch"
+  295  clear
+  296  arch="$(ls)"
+  297  declare -F
+  298  clear
+  299  echo $arch
+  300  unset  arch
+  301  echo $arch
+  302  clear
+  303  git branch
+  304  git switch main
+  305  clear
+  306  git status
+  307  clear
+  308  git fsck --lost-found
+  309  git reflog
+  310  git reflog --all
+  311  clear
+  312  git gc --full
+  313  git fsck --full
+  314  git fsck --dangling
+  315  clear
+  316  git reflog
+  317  git branch contains 262d94b
+  318  git log --oneline --abrev-commit HEAD -1
+  319  git log --oneline --abbrev-commit HEAD -1
+  320  git log --oneline --abbrev-commit HEAD -2
+  321  git branch --contains 4af4ec0
+  322  clear
+  323  git status
+  324  clear
+  325  git branch
+  326  git diff main dos
+  327  clear
+  328  ls
+  329  ls bash/
+  330  diff menu.sh seguir.sh
+  331  diff bash/ menu.sh bash/seguir.sh
+  332  diff bash/menu.sh bash/seguir.sh
+  333  clear
+  334  declare -F arch
+  335  echo $arch
+  336  arch="$(ls)"
+  337  echo $arch
+  338  clear
+  339  declare -F arch
+  340  echo "$arch"
+  341  echo -p "$arch"
+  342  declare -a misar="($(ls))"
+  343  clear
+  344  declare -F misar
+  345  echo "${arch[@]}"
+  346  echo "${misar[@]}"
+  347  echo -p"${misar[@]}"
+  348  echo -p"${misar[2]}"
+  349  echo -p "${misar[@]}"
+  350  echo  "${!misar[@]}"
+  351  echo  "${#misar[@]}"
+  352  declare -F  "${#misar[@]}"
+  353  echo -n  "${#misar[@]}"
+  354  echo -n "${misar[@]}"
+  355  echo -f "${misar[@]}"
+  356  echo -p misar
+  357  echo -F misar
+  358  echo  misar
+  359  declare -F
+  360  declare misar
+  361  declare -n misar
+  362  declare -F misar
+  363  declare  "${misar[@]}"
+  364  declare -F  "${misar[@]}"
+  365  clear
+  366  letra=(a b c d e)
+  367  echo "${!letra[@]}"
+  368  letra+=(f g h i)
+  369  echo "${letra[@]}"
+  370  unset letra
+  371  echo "${letra[@]}"
+  372  clear
+  373  letra=(d f b a e c)
+  374  echo "${letra[@]} | sort"
+  375  echo $("${letra[@]} | sort")
+  376* or=$(echo "${letra[@]}" | sort)
+  377  echo or
+  378  echo $or
+  379  or=($(echo "${letra[@]} | sort"))
+  380  echo "${or[@]}"
+  381  echo $("${letra[@]}" | sort)
+  382  echo "${letra[@]}" | sort
+  383  or=($(echo "${letra[@]}" | sort))
+  384  echo $or
+  385  echo "${o[@]}"
+  386  echo "${or[@]}"
+  387  unset or
+  388  clear
+  389  echo "${letra[@]}"
+  390  echo $(echo "${letra[@]}" | sort) 
+  391  letra=(d f b a e c) | sort
+  392  echo "${letra[@]}"
+  393  echo "2 3 1" | sort
+  394  ord=$(for i in "${letra[@]}"; do { echo "$i"; } done | sort }
+  395  ord=$(for i in "${letra[@]}"; do { echo "$i"; } done | sort)
+  396  echo "${ord[@]}"
+  397  ord2=$(printf '%s\n' "${letra[@]}" | sort)
+  398  echo "${ord2[@]}"
+  399  printf '%s\n' "${letra[@]}" | sort
+  400  echo '%s\n' "${letra[@]}" | sort
+  401  echo -e '%s\n' "${letra[@]}" | sort
+  402  echo -e "\n${letra[@]}" | sort
+  403  echo -e "%s\n${letra[@]}" | sort
+  404  echo '%s' -e "\n${letra[@]}" | sort
+  405  clear
+  406  printf '%s\n' "${letra[@]}" | sort
+  407  printf '%s\n' "${letra[@]}"
+  408  printf '%s' "${letra[@]}"
+  409  let=(printf '%s\n' "${letra[@]}" | sort)
+  410  let=($(printf '%s\n' "${letra[@]}" | sort))
+  411  echo "${let[@]}"
+  412  printf '%s' "${letra[@]}" | sort
+  413  printf '%s\n' "${letra[@]}" | sort
+  414  clear
+  415  echo ${let[@]}
+  416  nombre=("ale" "ari" "uña")
+  417  echo ${nombre[@]}
+  418  echo -e '\n' ${nombre[@]}
+  419  declare -p nombre
+  420  clear
+  421  declare -p letra
+  422  clear
+  423  ls
+  424  declare -p nombre
+  425  declare -f nombre
+  426  declare -F nombre
+  427  declare -F
+  428  clear
+  429  echo $nombre
+  430  declare -F
+  431  clear
+  432  declare -a
+  433  unset let
+  434  unset letra
+  435  clear
+  436  declare -a
+  437  clear
+  438  apellido="romero"
+  439  clear
+  440  declare -a
+  441  echo $apellido
+  442  clear
+  443  function listar() { ls -l | awk '{print $9}'}
+  444  function listar() { ls -l | awk '{print $9}' }
+  445  function listar() { ls -l | awk '{print $9}'; }
+  446  listar
+  447  clear
+  448  ls
+  449  git status
+  450  git branch -a | wc -l
+  451  git branch -vv
+  452  clear
+  453  git branch
+  454  git branch -a
+  455  git branch -b contains
+  456  git branch -d contains
+  457  git branch -d borrar
+  458  git branch
+  459  git branch -vv
+  460  git branch -a
+  461  git branch -D borrar
+  462  clear
+  463  git fetch --prune
+  464  clear
+  465  ls
+  466  git reflog
+  467  git branch --contains 262d94b
+  468  clear
+  469  alias pertencia="git branch --contains"
+  470  git reflog
+  471  pertencia 262d94b
+  472  git log --pretty="%h %G? %aN %s"
+  473  clear
+  474  git status --short
+  475  git config --global user.email
+  476  git config --global user.name
+  477  git config --global core.editor
+  478  git config -e
+  479  clear
+  480  git config --list
+  481  clear
+  482  git config --global user.signingkey
+  483  git config --global commit.gpgsign
+  484  gpg --list-keys
+  485  gpg --list-secret-keys
+  486  gpg --list-secret-keys --keyid-format=long
+  487  clear
+  488  export GPG_TTY=$(tty)
+  489  ls
+  490  git status
+  491  clear
+  492  history
+  493  clear
+  494  history > historia.txt
