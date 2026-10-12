@@ -1,0 +1,10 @@
+mante () 
+{ 
+    rama1=$(git symbolic-ref --short HEAD);
+    rama2=$(git rev-parse --abbrev-ref HEAD);
+    mensaje;
+    sleep 2;
+    lista2;
+    sleep 3;
+    listado
+}

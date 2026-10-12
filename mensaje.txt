@@ -1,0 +1,5 @@
+mensaje () 
+{ 
+    clear;
+    echo -e "\ta. Rama: $rama1\n\tb. Rama: $rama2\n"
+}

@@ -1,0 +1,8 @@
+lista2 () 
+{ 
+    echo -e "\tListado: ";
+    ls -F --color=auto --show-control-chars -lA | awk '$1=="drwxr-xr-x" {print "\t"$1 " - " $3 " - " $6 " - " $9 "\t--> Directorio"}';
+    echo " ";
+    ls -F --color=auto --show-control-chars -lA | awk '$1=="-rw-r--r--" {print "\t"$1 " - " $3 " - " $6 " - " $9 "\t--> Archivo"}';
+    echo " "
+}

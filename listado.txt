@@ -1,0 +1,14 @@
+listado () 
+{ 
+    con=($(ls));
+    for ar in "${con[@]}";
+    do
+        { 
+            if [[ -d "$ar" ]]; then
+                echo -e "\t---->>> $ar --> \tDirecotorio";
+            else
+                echo -e "\t---->>> $ar --> \tArchivo";
+            fi
+        };
+    done
+}
