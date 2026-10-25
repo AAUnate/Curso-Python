@@ -1,0 +1,5 @@
+{
+    "code-runner.executorMapByFileExtension": {
+        ".sh": "& \"C:\\Program Files\\Git\\bin\\bash.exe\" \"$fullFileName\""
+    }
+}
