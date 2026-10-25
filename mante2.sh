@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 listado () 
 { con=($(ls));
 largo=0;
