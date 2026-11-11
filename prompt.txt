@@ -1,0 +1,93 @@
+Quiero que revises y prepares en esta PC una configuración de VS Code para ejecutar proyectos de distintos lenguajes desde Code Runner o desde el mecanismo más adecuado de VS Code. No hagas cambios hasta inspeccionar el equipo y explicarme qué cambiarías. No instales ni desinstales programas, no cambies variables de entorno ni hagas cambios globales sin consultarme antes.
+
+Toma como referencia las configuraciones reales de mi otra PC que incluyo abajo. Están dentro de este proyecto, no son una configuración universal ni prueban por sí solas que todos los lenguajes estén configurados con Code Runner:
+
+1. `.vscode/settings.json` solo define un ejecutor de Code Runner para `.sh`:
+
+```json
+{
+    "code-runner.executorMapByFileExtension": {
+        ".sh": "& \"C:\\Program Files\\Git\\bin\\bash.exe\" \"$fullFileName\""
+    }
+}
+```
+
+La ruta absoluta `C:\Program Files\Git\bin\bash.exe` corresponde a esa PC y podría ser distinta o no existir en la otra. Comprueba dónde está instalado Git Bash antes de proponer una ruta. No agregues ejecutores de Code Runner para otros lenguajes sin comprobar primero qué intérpretes existen y cómo se ejecutan.
+
+2. `.vscode/launch.json` contiene una configuración de depuración de Node.js que ejecuta un archivo concreto del proyecto:
+
+```json
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "name": "Ejecutar el archivo actual",
+            "request": "launch",
+            "program": "${workspaceFolder}\\javascript\\index.js"
+        }
+    ]
+}
+```
+
+Esta configuración apunta al archivo `javascript/index.js`, no al archivo actualmente abierto, y es una configuración de ejecución/depuración de VS Code, no una regla de Code Runner. Adáptala solo si hace falta; no presupongas que ese archivo existe en otros proyectos.
+
+3. `python/.vscode/launch.json` contiene estas dos configuraciones de ejecución en la terminal integrada:
+
+```json
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Node: Ejecutar JS actual",
+            "type": "node",
+            "request": "launch",
+            "program": "${file}",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Python: Ejecutar archivo actual",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal"
+        }
+    ]
+}
+```
+
+Este archivo está en la subcarpeta `python`, por lo que su alcance y `${workspaceFolder}` dependen de qué carpeta se abra como workspace. Verifica ese contexto antes de reutilizarlo. La configuración de Python requiere la extensión/herramienta de depuración correspondiente.
+
+Usa estos ejemplos para comprender la intención (Git Bash para `.sh`; terminal integrada para Node.js y Python), pero primero inspecciona la otra PC y adapta las rutas, extensiones y comandos a lo que realmente esté instalado. No copies rutas absolutas ni supongas que las versiones o configuraciones de esta PC son válidas allí. Mantén separadas las configuraciones de Code Runner (`settings.json`), ejecución/depuración (`launch.json`) y tareas (`tasks.json`); elige el mecanismo apropiado para cada lenguaje y explica la diferencia.
+
+Primero, inspecciona el entorno y reporta:
+1. Los lenguajes, intérpretes, compiladores, runtimes, shells y gestores de versiones instalados y disponibles en PATH. Incluye Python, Bash, Java, C y JavaScript/Node.js, además de cualquier otro lenguaje o herramienta que encuentres.
+2. Las versiones disponibles y cómo se pueden seleccionar de forma segura, sin cambiar ni desinstalar versiones existentes.
+3. La configuración actual de VS Code relevante: Code Runner, extensiones, settings de usuario y de workspace, launch.json, tasks.json y configuración de terminales.
+4. Si las herramientas instaladas están accesibles desde VS Code y desde la terminal elegida. Distingue Git Bash de otras terminales.
+5. Para cada lenguaje, identifica qué shell ejecuta realmente el comando de Code Runner y comprueba que la sintaxis del comando corresponde a ese shell. No confundas el perfil predeterminado de la terminal integrada con el shell o entorno desde el que Code Runner resuelve sus comandos. Verifica desde una ejecución real con Run Code qué intérprete y versión se usaron; no des por válido que funcione en una terminal manual. Si el comando depende de PowerShell, Git Bash u otro shell, indícalo y no cambies el shell sin adaptar y volver a probar los ejecutores afectados.
+
+Después, propón una configuración que:
+- Al abrir un proyecto, determine el lenguaje y la versión requerida usando primero los archivos del propio proyecto: por ejemplo, .python-version/pyproject.toml para Python; .nvmrc/.node-version/package.json para Node.js; pom.xml/build.gradle y configuración del proyecto para Java; archivos de solución/proyecto para .NET; Makefile/CMakeLists.txt y metadatos de toolchain para C/C++; y los archivos equivalentes que correspondan a otros lenguajes detectados.
+- Use, cuando exista, el gestor de versiones ya instalado y el selector de intérprete/runtime de la extensión oficial del lenguaje. Respete la versión declarada por el proyecto y no cambie automáticamente a otra versión solo porque sea la más nueva.
+- Configure la ejecución apropiada por lenguaje: Code Runner solo donde sea compatible; depuradores, extensiones oficiales o tasks de VS Code cuando sean más fiables. Los scripts Bash deben ejecutarse con Git Bash si ese es el shell disponible/configurado. Los proyectos web deben distinguir entre código ejecutado en navegador y programas ejecutados con Node.js.
+- Funcione tanto para proyectos antiguos como nuevos, preferentemente con ajustes por workspace/proyecto y sin depender de rutas absolutas específicas de esta PC. Evite que un ajuste de un proyecto afecte a los demás.
+- No suponga que una versión puede deducirse con certeza si el proyecto no declara ninguna. En ese caso, usa una regla de fallback explícita y segura basada en las versiones ya instaladas, y déjame un resumen claro de la elección. No cambies silenciosamente la versión ni el contenido del proyecto.
+- Si falta un intérprete, compilador, extensión o metadato imprescindible, informa qué falta y cómo resolverlo; no lo instales ni alteres el proyecto sin mi autorización.
+- Mi requisito principal es que la ejecución normal se haga con **Run Code de Code Runner** para cada lenguaje y versión disponible que sea razonable soportar. No consideres que el requisito está cumplido por tener solo configuraciones de `launch.json`, tasks o comandos manuales en la terminal. Si Code Runner no puede cubrir algún lenguaje o seleccionar automáticamente la versión requerida con las herramientas disponibles, indícalo claramente y explica la limitación; no lo presentes como si funcionara.
+- Comprueba si es técnicamente posible que Code Runner seleccione automáticamente la versión adecuada según el proyecto, sin que yo tenga que cambiarla manualmente al abrir proyectos viejos o nuevos. Basa la selección primero en metadatos/archivos de versión del proyecto y en gestores de versiones instalados. No inventes una detección que Code Runner no soporte: si hace falta un wrapper o una configuración por proyecto para resolverlo, descríbelo y solicita mi aprobación antes de crearlo.
+- Prioriza primero Python, Node.js/JavaScript, Bash, Java y C/C++. Para los demás lenguajes detectados, inclúyelos en la matriz solo si están instalados y pueden validarse con Run Code; si no, márcalos como fuera del alcance inicial. Aunque queden fuera del alcance, informa cuáles detectaste y por qué no se incluyen en la validación inicial.
+- Para cada lenguaje priorizado y cada versión instalada que se pretenda soportar, prepara una matriz que indique: cómo se detecta la versión requerida; qué ejecutor/comando de Code Runner se usaría; qué archivo/configuración participa; cómo se valida; y el resultado (correcto, bloqueado o no compatible). Aplica el mismo nivel de detalle a cualquier otro lenguaje que sí se incluya en la matriz.
+- Valida la ejecución real mediante **Run Code**, no solo comprobando que el comando exista. Usa pruebas mínimas y seguras que no alteren proyectos ni datos. Si para una prueba se requiere crear archivos temporales o instalar algo, informa primero y pide autorización. No afirmes que una versión funciona si no se ejecutó una prueba con esa versión.
+- Si un proyecto no declara una versión o la información es ambigua, no cambies silenciosamente a una versión arbitraria. Expón la ambigüedad y la regla de fallback propuesta; si no se puede resolver automáticamente con fiabilidad, marca ese caso como pendiente y pide una decisión antes de modificar la configuración.
+- Al abrir proyectos distintos, comprueba el comportamiento de selección por proyecto, incluyendo proyectos antiguos y nuevos. No basta con verificar un único archivo o la versión predeterminada del sistema. Si no es posible cubrir todas las versiones/proyectos, lista explícitamente los casos no verificados o no soportados.
+
+Antes de aplicar cambios, muéstrame:
+- qué archivos de configuración modificarías;
+- qué comandos de ejecución utilizarías para cada lenguaje encontrado;
+- cómo seleccionarías la versión por proyecto;
+- qué limitaciones quedan, especialmente para proyectos que no declaran una versión.
+- la matriz de cobertura de lenguajes y versiones para Code Runner, con las pruebas que propones y cualquier caso que no pueda ejecutarse automáticamente.
+
+No modifiques proyectos ni configuraciones hasta que te confirme el plan. Luego realiza solo los cambios aprobados, valida mediante Run Code cada lenguaje y versión incluidos en el alcance aprobado con ejemplos seguros y resume los cambios, las pruebas realizadas y cualquier caso pendiente. No declares cobertura total si alguna versión no fue probada.
