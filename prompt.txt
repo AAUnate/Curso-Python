@@ -89,5 +89,7 @@ Antes de aplicar cambios, muéstrame:
 - cómo seleccionarías la versión por proyecto;
 - qué limitaciones quedan, especialmente para proyectos que no declaran una versión.
 - la matriz de cobertura de lenguajes y versiones para Code Runner, con las pruebas que propones y cualquier caso que no pueda ejecutarse automáticamente.
-
+“No amplíes el alcance sin autorización explícita.”
 No modifiques proyectos ni configuraciones hasta que te confirme el plan. Luego realiza solo los cambios aprobados, valida mediante Run Code cada lenguaje y versión incluidos en el alcance aprobado con ejemplos seguros y resume los cambios, las pruebas realizadas y cualquier caso pendiente. No declares cobertura total si alguna versión no fue probada.
+
+El resultado mínimo aceptable es que Python, Node.js/JavaScript, Bash, Java y C/C++ queden clasificados como correcto, bloqueado o no compatible, con evidencia de ejecución mediante Run Code cuando corresponda. “Correcto” significa que se validó una ejecución real mediante Run Code; “bloqueado” significa que falta una dependencia, permiso, configuración o decisión del usuario; “no compatible” significa que Code Runner no puede cubrir ese caso de forma fiable con las herramientas disponibles.
